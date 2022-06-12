@@ -1,25 +1,21 @@
 const db = require ('../dataBase/dbConexao')
 const { DataTypes } = require ('sequelize')
+const { User } = require('./User')
 
-const User = db.define ('user', {
-    idUser: {
+const Post = db.define ('post', {
+    idPost: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
-    nome: {
-        type: DataTypes.INTEGER
+    user_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: User,
+            key: 'idUser'
+        }
     },
-    email: {
-        type: DataTypes.STRING
-    },
-    apartament: {
-        type: DataTypes.STRING
-    },
-    password: {
-        type: DataTypes.STRING
-    },
-    admin: {
+    comments: {
         type: DataTypes.STRING
     },
     createdAt: {
@@ -29,7 +25,7 @@ const User = db.define ('user', {
         type: DataTypes.DATE
     }
 }, {
-    tableName: 'user'
+    tableName: 'post'
 })
 
-module.exports = User
+module.exports = Post
