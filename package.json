@@ -1,0 +1,38 @@
+{
+  "name": "parrot",
+  "version": "1.0.0",
+  "description": "[ XP 41 ] Hands On 4 - Grupo I - Gama Academy",
+  "main": "src/app.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon backEnd/src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/helenilsonholamek/parrot.git"
+  },
+  "author": "[XP 41 ] HandsOn 4 | Grupo 4",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/helenilsonholamek/parrot/issues"
+  },
+  "homepage": "https://github.com/helenilsonholamek/parrot#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-jwt": "^7.7.5",
+    "express-validation": "^4.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.20.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16",
+    "sequelize-cli": "^6.4.1"
+  }
+}
