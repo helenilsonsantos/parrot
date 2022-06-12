@@ -21,7 +21,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       password: {
-        type: Sequelize.INTEGER(200),
+        type: Sequelize.STRING(200),
         allowNull: false
       },
       createdAt: {
