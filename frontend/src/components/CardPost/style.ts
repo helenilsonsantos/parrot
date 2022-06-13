@@ -14,9 +14,10 @@ export const CardContainer = styled.div`
     }
     @media (min-width: 460px) {
             
-    img {
-        padding: 2.5rem 1rem;
-    }
+        img {
+            padding: 2.5rem 1rem;
+        }
+
     }
 `
 
