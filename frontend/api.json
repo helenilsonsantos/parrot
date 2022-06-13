@@ -1,0 +1,20 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "nome": "Teste",
+      "email": "email@email.com",
+      "senha": "bestpassw0rd",
+      "unidadeApt": "130",
+      "foto": "www.google.com"
+    },
+    {
+      "nome": "Teste",
+      "email": "email@email.com",
+      "senha": "bestpaassword",
+      "unidadeApt": "133",
+      "foto": "foto",
+      "id": 2
+    }
+  ]
+}

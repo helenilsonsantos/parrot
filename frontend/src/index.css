@@ -7,7 +7,7 @@
 }
 
 body {
-  background: url('./assets/parrot-background.png') rgb(0, 0, 0, 0.8) repeat;
+  background: rgb(0, 0, 0, 0.8) url('./assets/parrot-background.png') repeat center;
   background-size: cover;
   margin: 0;
   font-family: -apple-system, Questrial, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
