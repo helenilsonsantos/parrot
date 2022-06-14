@@ -8,7 +8,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node backEnd/src/app.js",
     "dev": "nodemon backEnd/src/app.js"
+
   },
   "repository": {
     "type": "git",
