@@ -5,7 +5,6 @@ import CardPost from '../CardPost';
 
 const PostCommentCard: React.FC = () => {
     return (
-        <>
             <PostComment.Container>
                 <img src={avatar} />
                 <PostComment.CommentForm>
@@ -13,14 +12,6 @@ const PostCommentCard: React.FC = () => {
                     <PostComment.PostButton size='sm'>publicar</PostComment.PostButton>
                 </PostComment.CommentForm>
             </PostComment.Container>
-            <CardPost />
-            <CardPost />
-            <CardPost />
-            <CardPost />
-            <CardPost />
-            <CardPost />
-            <CardPost />
-        </>
     )
 }
 
