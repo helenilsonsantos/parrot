@@ -1,18 +1,25 @@
 const db = require ('../dataBase/dbConexao')
 const { DataTypes } = require ('sequelize')
-const { ComentsPost } = require('./ComentsPost')
+const { User } = require('.')
 
-const ComentsPost = db.define ('Coments', {
+const comentsPosts = db.define ('comentsPosts', {
      idComents: {
           type: DataTypes.INTEGER,
           primaryKey: true,
           autoIncrement: true
      },
-     idPost: {
+     post_id: {
           type: DataTypes.INTEGER,
           references: {
                model: Post,
                key: 'idPost'
+          }
+     },
+     user_id: {
+          type: DataTypes.INTEGER,
+          references: {
+               model: User,
+               key: 'idUser'
           }
      },
      postComments: {
@@ -25,7 +32,7 @@ const ComentsPost = db.define ('Coments', {
           type: DataTypes.DATE
      }
 },  {
-     tableName: 'ComentsPost'
+     tableName: 'comentsPosts'
 })
 
-module.exports = ComentsPost
+module.exports = comentsPosts
