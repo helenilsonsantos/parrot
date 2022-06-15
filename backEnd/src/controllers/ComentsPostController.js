@@ -1,4 +1,4 @@
-const { ComentsPost} = require ('../models')
+const { ComentsPost } = require ('../models')
 
 const ComentsPostController = {
     async cadastrarComents (req, res) {
@@ -23,7 +23,7 @@ const ComentsPostController = {
         try {
             const {idPost, comments} = req.body
             const updateComentsPost = await ComentsPost.update (
-                { idPost, comments},
+                { idPost, comments },
                 {
                     where: {
                         idPost: id
@@ -41,7 +41,7 @@ const ComentsPostController = {
 
         try {
             const { id } = req.params
-            awaiestroy ({
+            await destroy ({
                 where: {
                     idPost: id
                 }
