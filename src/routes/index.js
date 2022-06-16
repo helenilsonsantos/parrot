@@ -7,18 +7,24 @@ const auth = require ('../middlewares/auth')
 const userLogado = require ('../middlewares/userLogado')
 const likesController = require('../controllers/likeController')
 const routes = express.Router()
+const userValidation = require('../validations')
+const postValidation = require('../validations')
+
+console.log(" oi");
+
+
 
 //ROTAS PARA O CRUD DE USUÁRIOS
-routes.post('/usuario/criar', userController.cadastrarUser)
+routes.post('/usuario/criar', userValidation.create, userController.cadastrarUser)
 routes.get('/usuario/lista', userController.listaUser)
-routes.put('/usuario/atualizar/:id', userController.updateUser)
-routes.delete('/usuario/deletar/:id', userController.deleteUser)
+routes.put('/usuario/atualizar/:id', userValidation.update, userController.updateUser)
+routes.delete('/usuario/deletar/:id', userValidation.destroy, userController.deleteUser)
 
 //ROTAS PARA O CRUD DE POST
-routes.post('/post/criar', postController.cadastrarPost)
+routes.post('/post/criar', postValidation.create, postController.cadastrarPost)
 routes.get('/post/lista', postController.listaPost)
-routes.put('/post/atualizar/:id', postController.updatePost)
-routes.delete('/post/deletar/:id', postController.deletePost)
+routes.put('/post/atualizar/:id', postValidation.update, postController.updatePost)
+routes.delete('/post/deletar/:id', postValidation.delete, postController.deletePost)
 
 //ROTAS PARA O CRUD DE FAZER COMENTARIOS EM POST
 routes.post('/post/coments/criar', ComentsPostController.cadastrarComents)
