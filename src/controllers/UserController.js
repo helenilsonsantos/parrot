@@ -63,15 +63,15 @@ const userController = {
     async deleteUser (req, res) {
 
         try {
-            const { idUser } = req.params
+            const { id } = req.params
 
             await User.destroy ({
                 where: {
-                    idUser
+                    idUser: id
                 }
             })
 
-            return res.status(204).json
+            return res.status(200).json('Usuário Deletado')
             
         } catch (error) {
             console.log(error)
