@@ -1,9 +1,9 @@
 import React from 'react';
-import ParrotNavbar from '../NavBar';
-import CardPost from '../CardPost';
-import PostCommentCard from '../PostCommentCard';
+import ParrotNavbar from '../../components/NavBar';
+import CardPost from '../../components/CardPost';
+import PostCommentCard from '../../components/PostCommentCard';
 
-const MainPage: React.FC = () => {
+const Feed: React.FC = () => {
     return (
         <>
             <ParrotNavbar />
@@ -16,4 +16,4 @@ const MainPage: React.FC = () => {
     )
 }
 
-export default MainPage;
+export default Feed;

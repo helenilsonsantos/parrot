@@ -106,5 +106,4 @@ export const StyledButton = styled(Button)`
 export const StyledErrorMessage = styled.div`
     color: #FF3333;
     padding-left: 0.5rem;
-    font-weight: 700;
     `

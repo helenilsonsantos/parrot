@@ -1,7 +1,6 @@
 import React from 'react';
 import * as PostComment from './style';
 import avatar from '../../assets/avatar.png';
-import CardPost from '../CardPost';
 
 const PostCommentCard: React.FC = () => {
     return (

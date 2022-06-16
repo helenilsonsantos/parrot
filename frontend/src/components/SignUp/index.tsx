@@ -1,9 +1,9 @@
 import React from 'react';
-import { ErrorMessage, Formik, useFormik } from 'formik';
-import { postAddUser } from '../../services/addUser';
+import { ErrorMessage, Formik } from 'formik';
+import { postAddUser } from '../../services/User';
 import * as Yup from 'yup';
 
-import * as RF from './style';
+import * as RF from './style'
 import logo from '../../assets/logo-parrot.png';
 
 
@@ -12,10 +12,10 @@ const RegisterUserForm: React.FC = () => {
     const schema = Yup.object({
         nome: Yup.string().required('Campo Nome é obrigatório'),
         email: Yup.string().email('E-mail não é válido').required('Campo E-mail é obrigatório'),
-        senha: Yup.string().required('Campo Senha é obrigatório').min(6, 'Senha deve ter pelo menos 6 caracteres.'),
-        confirmaSenha: Yup.string().required('Campo Confirmar Senha é obrigatório').oneOf([Yup.ref('senha'), null], 'As senhas digitadas devem ser iguais.'),
-        unidadeApt: Yup.string().required('Campo Unidade/Apartamento é obrigatório'),
-        foto: Yup.string().required('Link para foto é obrigatório')
+        // senha: Yup.string().required('Campo Senha é obrigatório').min(6, 'Senha deve ter pelo menos 6 caracteres.'),
+        // confirmaSenha: Yup.string().required('Campo Confirmar Senha é obrigatório').oneOf([Yup.ref('senha'), null], 'As senhas digitadas devem ser iguais.'),
+        apartment: Yup.string().required('Campo Unidade/Apartamento é obrigatório'),
+        // foto: Yup.string().required('Link para foto é obrigatório')
     
     })
 
@@ -46,8 +46,9 @@ const RegisterUserForm: React.FC = () => {
                 email: '',
                 senha: '',
                 confirmaSenha: '',
-                unidadeApt: '',
-                foto: ''
+                apartment: '',
+                foto: '',
+                admin: false
             }}
             onSubmit={values => {
                 postAddUser(values);
@@ -113,16 +114,16 @@ const RegisterUserForm: React.FC = () => {
                     </RF.RegFormGroup>
                     <RF.RegFormGroup>
                         <RF.RegFormInput
-                            name='unidadeApt'
+                            name='apartment'
                             id='unidade-apartamento'
                             type='text'
                             placeholder='unidade/apartamento'
-                            value={values.unidadeApt}
+                            value={values.apartment}
                             onChange={handleChange}
-                            isValid={touched.unidadeApt && !errors.unidadeApt}
-                            isInvalid={touched.unidadeApt && !!errors.unidadeApt}
+                            isValid={touched.apartment && !errors.apartment}
+                            isInvalid={touched.apartment && !!errors.apartment}
                         />
-                        <ErrorMessage name='unidadeApt' component={RF.StyledErrorMessage}/>
+                        <ErrorMessage name='apartment' component={RF.StyledErrorMessage}/>
                     </RF.RegFormGroup>
                     <RF.RegFormGroup>
                         <RF.RegFormInput
@@ -136,6 +137,20 @@ const RegisterUserForm: React.FC = () => {
                             isInvalid={touched.foto && !!errors.foto}
                         />
                         <ErrorMessage name='foto' component={RF.StyledErrorMessage}/>
+                    </RF.RegFormGroup>
+                    <RF.RegFormGroup>
+                        <RF.RegFormInput
+                            name='admin'
+                            id='admin'
+                            type='text'
+                            placeholder='admin'
+                            value={values.admin = false}
+                            onChange={handleChange}
+                            isValid={touched.admin && !errors.admin}
+                            isInvalid={touched.admin && !!errors.admin}
+                            style={{display: 'none'}}
+                        />
+                        <ErrorMessage name='admin' component={RF.StyledErrorMessage}/>
                     </RF.RegFormGroup>
                     <RF.StyledButton size='sm' type='submit'>entrar</RF.StyledButton>
                 </RF.RegForm>

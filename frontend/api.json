@@ -1,20 +1,46 @@
 {
   "user": [
     {
-      "id": 1,
+      "idUser": 1,
       "nome": "Teste",
       "email": "email@email.com",
-      "senha": "bestpassw0rd",
-      "unidadeApt": "130",
-      "foto": "www.google.com"
+      "apartment": "130",
+      "admin": false
     },
     {
-      "nome": "Teste",
-      "email": "email@email.com",
-      "senha": "bestpaassword",
-      "unidadeApt": "133",
-      "foto": "foto",
-      "id": 2
+      "nome": "User Test",
+      "email": "test@mail.com",
+      "apartment": "144",
+      "admin": "",
+      "idUser": 2
+    },
+    {
+      "nome": "User Test",
+      "email": "test@mail.com",
+      "apartment": "144",
+      "admin": "",
+      "idUser": 3
+    },
+    {
+      "nome": "User Test",
+      "email": "test@mail.com",
+      "apartment": "144",
+      "admin": "",
+      "idUser": 4
+    },
+    {
+      "nome": "User Test",
+      "email": "test@mail.com",
+      "apartment": "144",
+      "admin": "false",
+      "idUser": 5
+    },
+    {
+      "nome": "User Test",
+      "email": "test@mail.com",
+      "apartment": "144",
+      "admin": false,
+      "idUser": 6
     }
   ]
 }

@@ -1,13 +1,10 @@
-import { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import RegisterUserForm from './components/RegisterUserForm';
-import MainPage from './components/MainPage';
+import Routes from './Routes'
 
 function App() {
 
   return (
-    <MainPage />
+    <Routes />
   )
 }
 
