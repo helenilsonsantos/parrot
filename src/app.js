@@ -1,9 +1,9 @@
 const express = require ('express')
 const cors = require('cors')
 const port = process.env.PORT
-const routes = require('../src/routes')
-const handleError = require ('../src/middlewares/handleError')
-const db = require ('../src/dataBase/dbConexao')
+const routes = require('./routes')
+const handleError = require ('./middlewares/handleError')
+const db = require ('./dataBase/dbConexao')
 
 const app = express()
 app.use (cors())

@@ -8,9 +8,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node backEnd/src/app.js",
-    "dev": "nodemon backEnd/src/app.js",
-    "build": "npx sequelize-cli db:migrate"
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
   },
   "repository": {
     "type": "git",
