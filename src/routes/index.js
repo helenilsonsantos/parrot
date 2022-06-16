@@ -33,9 +33,9 @@ routes.put('/post/coments/atualizar/:id', ComentsPostController.updateComentsPos
 routes.delete('/post/coments/deletar/:id', ComentsPostController.deleteComentsPost)
 
 //ROTAS DE LIKES
-routes.post('/post/likes/enviar/:idPost', likesController.cadastrarLike)
-routes.get('/post/likes/qtnlikes/:idPost', likesController.qtnLikes)
-routes.delete('/post/likes/remover/:idLike', likesController.removerLike)
+routes.post('/post/likes/enviar/:id', likesController.cadastrarLike)
+routes.get('/post/likes/qtnlikes/:id', likesController.qtnLikes)
+routes.delete('/post/likes/remover/:id', likesController.removerLike)
 
 //ROTA DE LOGIN DO USUÁRIO
 routes.post('/login', authController.login)
