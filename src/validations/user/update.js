@@ -1,6 +1,9 @@
-import { validate, Joi } from "express-validation";
+const { validate, Joi } =  require ('express-validation')
 
-export const createPost = validate({
+module.exports = validate({
+  params: Joi.object({
+    idUser: Joi.number().required(),
+  }),
   body: Joi.object({
     nome: Joi.string().required(),
     email: Joi.string().email().required(),
@@ -8,4 +11,4 @@ export const createPost = validate({
     password: Joi.string().required(),
     admin: Joi.string().required(),
   }),
-});
+})

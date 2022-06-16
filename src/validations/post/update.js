@@ -1,10 +1,10 @@
-import { validate, Joi } from "express-validation";
+const { validate, Joi } =  require ('express-validation')
 
-export const updateUser = validate({
+module.exports = validate({
   params: Joi.object({
     user_id: Joi.number().required(),
   }),
   body: Joi.object({
     coments: Joi.string().required(),
   }),
-});
+})

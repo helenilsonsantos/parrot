@@ -7,24 +7,24 @@ const auth = require ('../middlewares/auth')
 const userLogado = require ('../middlewares/userLogado')
 const likesController = require('../controllers/likeController')
 const routes = express.Router()
-const userValidation = require('../validations')
-const postValidation = require('../validations')
-
-console.log(" oi");
-
-
+const userValidationCreate = require('../validations/user/create')
+const userValidationUpdate = require('../validations/user/update')
+const userValidationDestroy = require('../validations/user/destroy')
+const postValidationCreate = require('../validations/post/create')
+const postValidationUpdate = require('../validations/post/update')
+const postValidationDestroy = require('../validations/post/destroy')
 
 //ROTAS PARA O CRUD DE USUÁRIOS
-routes.post('/usuario/criar', userValidation.create, userController.cadastrarUser)
+routes.post('/usuario/criar', userValidationCreate, userController.cadastrarUser)
 routes.get('/usuario/lista', userController.listaUser)
-routes.put('/usuario/atualizar/:id', userValidation.update, userController.updateUser)
-routes.delete('/usuario/deletar/:id', userValidation.destroy, userController.deleteUser)
+routes.put('/usuario/atualizar/:id', userValidationUpdate, userController.updateUser)
+routes.delete('/usuario/deletar/:id', userValidationDestroy, userController.deleteUser)
 
 //ROTAS PARA O CRUD DE POST
-routes.post('/post/criar', postValidation.create, postController.cadastrarPost)
+routes.post('/post/criar', postValidationCreate, postController.cadastrarPost)
 routes.get('/post/lista', postController.listaPost)
-routes.put('/post/atualizar/:id', postValidation.update, postController.updatePost)
-routes.delete('/post/deletar/:id', postValidation.delete, postController.deletePost)
+routes.put('/post/atualizar/:id', postValidationUpdate, postController.updatePost)
+routes.delete('/post/deletar/:id', postValidationDestroy, postController.deletePost)
 
 //ROTAS PARA O CRUD DE FAZER COMENTARIOS EM POST
 routes.post('/post/coments/criar', ComentsPostController.cadastrarComents)
