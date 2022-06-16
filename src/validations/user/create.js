@@ -6,6 +6,6 @@ module.exports = validate({
     email: Joi.string().email().required(),
     apartment: Joi.string().required(),
     password: Joi.string().required(),
-    admin: Joi.string().required(),
+    admin: Joi.boolean().required(),
   }),
 });
