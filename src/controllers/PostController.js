@@ -65,7 +65,7 @@ const postController = {
                 }
             })
 
-            return res.status(204).json
+            return res.status(200).json('Post Deletado com Sucesso')
             
         } catch (error) {
             console.log(error)
