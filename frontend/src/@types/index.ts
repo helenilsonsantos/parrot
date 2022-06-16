@@ -8,16 +8,25 @@
 //     user_id: number
 // }
 
+export interface Post {
+    nome: string,
+    email: string,
+    apartament: string,
+    comentario: string,
+    foto: string
+}
+
 export interface SignIn {
     email: string,
     password: string
 }
 
 export interface User extends SignIn {
+    idUser: number,
     nome: string,
     senha: string,
-    apartment: string,
-    admin: boolean
+    apresentacao: string,
+    // admin: boolean
     // permission: Permission
 }
 

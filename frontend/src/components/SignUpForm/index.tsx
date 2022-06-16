@@ -14,29 +14,11 @@ const RegisterUserForm: React.FC = () => {
         email: Yup.string().email('E-mail não é válido').required('Campo E-mail é obrigatório'),
         senha: Yup.string().required('Campo Senha é obrigatório').min(6, 'Senha deve ter pelo menos 6 caracteres.'),
         confirmaSenha: Yup.string().required('Campo Confirmar Senha é obrigatório').oneOf([Yup.ref('senha'), null], 'As senhas digitadas devem ser iguais.'),
-        apartment: Yup.string().required('Campo Unidade/Apartamento é obrigatório'),
+        apartament: Yup.string().required('Campo Unidade/Apartamento é obrigatório'),
         foto: Yup.string().required('Link para foto é obrigatório')
     
     })
 
-    // const formik = useFormik({
-    //     initialValues: {
-    //         nome: '',
-    //         email: '',
-    //         senha: '',
-    //         confirmaSenha: '',
-    //         unidadeApt: '',
-    //         foto: ''
-    //     },
-    //     validationSchema,
-    //     onSubmit: values => {
-    //         postAddUser(values);
-    //         alert(JSON.stringify(values, null, 2));
-    //         formik.resetForm();
-    //     }
-    // });
-    
-    
     return (
         <Formik
 
@@ -46,7 +28,7 @@ const RegisterUserForm: React.FC = () => {
                 email: '',
                 senha: '',
                 confirmaSenha: '',
-                apartment: '',
+                apartament: '',
                 foto: '',
                 admin: false
             }}
@@ -114,14 +96,14 @@ const RegisterUserForm: React.FC = () => {
                     </RF.RegFormGroup>
                     <RF.RegFormGroup>
                         <RF.RegFormInput
-                            name='apartment'
+                            name='apartament'
                             id='unidade-apartamento'
                             type='text'
                             placeholder='unidade/apartamento'
-                            value={values.apartment}
+                            value={values.apartament}
                             onChange={handleChange}
-                            isValid={touched.apartment && !errors.apartment}
-                            isInvalid={touched.apartment && !!errors.apartment}
+                            isValid={touched.apartament && !errors.apartament}
+                            isInvalid={touched.apartament && !!errors.apartament}
                         />
                         <ErrorMessage name='apartment' component={RF.StyledErrorMessage}/>
                     </RF.RegFormGroup>

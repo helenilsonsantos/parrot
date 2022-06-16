@@ -1,5 +1,5 @@
 {
-  "user": [
+  "users": [
     {
       "idUser": 1,
       "nome": "Teste",
@@ -15,32 +15,43 @@
       "idUser": 2
     },
     {
-      "nome": "User Test",
-      "email": "test@mail.com",
-      "apartment": "144",
-      "admin": "",
+      "nome": "Usuario Teste",
+      "email": "email@email.com",
+      "apartament": "1020",
+      "admin": false,
       "idUser": 3
     },
     {
-      "nome": "User Test",
-      "email": "test@mail.com",
-      "apartment": "144",
-      "admin": "",
+      "nome": "Usuario teste",
+      "email": "email@email.com",
+      "apartament": "1020",
+      "admin": false,
       "idUser": 4
     },
     {
-      "nome": "User Test",
-      "email": "test@mail.com",
-      "apartment": "144",
-      "admin": "false",
+      "nome": "Usuario Teste",
+      "email": "email@email.com",
+      "apartament": "1020",
+      "admin": false,
       "idUser": 5
-    },
+    }
+  ],
+  "posts": [
     {
       "nome": "User Test",
-      "email": "test@mail.com",
-      "apartment": "144",
-      "admin": false,
-      "idUser": 6
+      "email": "test@email.com",
+      "apartment": 102,
+      "comentario": "Poxa galera, vamos respeitar o horário de silêncio! Tinha alguém usando furadeira 2 HORAS DA MANHÃ!!! ó_ó",
+      "foto": "...",
+      "id": 1
+    },
+    {
+      "nome": "User Test 2",
+      "email": "test2@email.com",
+      "apartment": 105,
+      "comentario": "Contratei um personal trainer e quero um parceiro pra fazer treinos semanais e dividir o custo, quem anima? :D",
+      "foto": "...",
+      "id": 2
     }
   ]
 }
