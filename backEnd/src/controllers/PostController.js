@@ -1,4 +1,4 @@
-const { Post, User } = require ('../models')
+const { Post, User, ComentsPost } = require ('../models')
 
 const postController = {
     async cadastrarPost (req, res) {
@@ -24,7 +24,7 @@ const postController = {
         try {
             const listaResposta = await Post.findAll({
                 attributes: ['idPost', 'comments', 'updatedAt'],
-                include: [{model: User, attributes:['nome']}]
+                include: [{model: User, attributes:['nome']}, {model: ComentsPost, attributes: ['user_id','postComments'] }]
             }) 
             res.status(200).json (listaResposta)
         } catch (error) {
