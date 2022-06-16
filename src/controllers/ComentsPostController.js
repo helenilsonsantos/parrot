@@ -23,7 +23,7 @@ const ComentsPostController = {
         try {
             const listaResposta = await ComentsPost.findAll({
                 attributes: ['postComments', 'updatedAt'],
-                include: [{model: User, attributes:['nome']}, {model: Post, attributes:['idPost','comments']}],
+                include: [{model: User, attributes:['nome']}]
             }) 
             res.status(200).json (listaResposta)
 
@@ -37,12 +37,12 @@ const ComentsPostController = {
         const { id } = req.params
 
         try {
-            const {idPost, comments} = req.body
+            const {post_id, user_id, postComments} = req.body
             const updateComentsPost = await ComentsPost.update (
-                { idPost, comments },
+                { post_id, user_id, postComments},
                 {
                     where: {
-                        idPost: id
+                        idComents: id
                     }
                 })
 
@@ -57,12 +57,13 @@ const ComentsPostController = {
 
         try {
             const { id } = req.params
-            await destroy ({
+            await ComentsPost.destroy ({
                 where: {
-                    idPost: id
+                    idComents: id
                 }
             })
-            return res.status(204).json
+
+            return res.status(204).json('Comentário Deletado com Sucesso')
             
         } catch (error) {
             console.log(error)
