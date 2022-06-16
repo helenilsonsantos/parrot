@@ -24,7 +24,7 @@ const postController = {
         try {
             const listaResposta = await Post.findAll({
                 attributes: ['idPost', 'comments', 'updatedAt'],
-                include: [{model: User, attributes:['nome']}, {model: ComentsPost, attributes: ['user_id','postComments'] }]
+                include: [{model: User, attributes:['nome']}, {model: ComentsPost, include: [{model: User, attributes: ['nome']}], attributes: ['postComments'] }]
             }) 
             res.status(200).json (listaResposta)
         } catch (error) {
