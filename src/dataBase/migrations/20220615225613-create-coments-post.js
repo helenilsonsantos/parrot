@@ -5,7 +5,7 @@ const post = require("../schema/post")
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('ComentsPosts', {
+    await queryInterface.createTable('comentsPosts', {
       idComents: {
         allowNull: false,
         autoIncrement: true,

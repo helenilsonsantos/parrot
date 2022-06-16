@@ -4,11 +4,11 @@ const likesController = {
     async cadastrarLike (req, res) {
 
         try {
-            const { idPost } = req.params
+            const { id } = req.params
             const {user_id} = req.body
             
             const newLike = await Likes.create ({
-                post_id: idPost,
+                post_id: id,
                 user_id,
             })
 
@@ -22,10 +22,10 @@ const likesController = {
 
     async qtnLikes (req, res) {
         try {
-            const { idPost } = req.params
+            const { id} = req.params
             const listaResposta = await Likes.count({
                 where: {
-                    post_id: idPost
+                    post_id: id
                 }
             })
 
@@ -40,14 +40,15 @@ const likesController = {
     async removerLike (req, res) {
 
         try {
-            const { idLike } = req.params
+            const { id } = req.params
 
             await Likes.destroy ({
                 where: {
-                    idLike: idLike
+                    idLike: id
                 }
             })
-
+            
+            res.json('Like Removido com Sucesso')
             return res.status(204).json('Like Removido com Sucesso')
             
         } catch (error) {

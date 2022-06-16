@@ -32,7 +32,7 @@ const comentsPosts = db.define ('comentsPosts', {
           type: DataTypes.DATE
      }
 },  {
-     tableName: 'comentsPosts'
+     tableName: 'ComentsPosts'
 })
 
 module.exports = comentsPosts
