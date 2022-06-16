@@ -1,15 +1,31 @@
-const { ComentsPost } = require ('../models')
+const { ComentsPost, User, Post } = require ('../models')
 
 const ComentsPostController = {
     async cadastrarComents (req, res) {
 
         try {
-            const {idPost, comments} = req.body
+            const {post_id, user_id, postComments} = req.body
             const newComentsPost = await ComentsPost.create ({
-                idPost,
-                comments,
+                post_id,
+                user_id,
+                postComments,
             })
             return res.status(201).json (newComentsPost)
+
+        } catch (error) {
+            console.log(error)
+            return res.status(error).json
+        }
+    },
+
+    async listarComents (req, res) {
+
+        try {
+            const listaResposta = await ComentsPost.findAll({
+                attributes: ['postComments', 'updatedAt'],
+                include: [{model: User, attributes:['nome']}, {model: Post, attributes:['idPost','comments']}],
+            }) 
+            res.status(200).json (listaResposta)
 
         } catch (error) {
             console.log(error)

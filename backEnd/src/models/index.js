@@ -14,17 +14,31 @@ Post.belongsTo (
     }
 )
 
-ComentsPost.hasMany (
+User.hasMany (
+    ComentsPost, {
+        foreignKey: 'user_id'
+    }
+)
+
+ComentsPost.belongsTo (
     User, {
         foreignKey: 'user_id'
     }
 )
 
-ComentsPost.hasMany (
+Post.hasMany (
+    ComentsPost, {
+        foreignKey: 'post_id'
+    }
+)
+
+ComentsPost.belongsTo (
     Post, {
         foreignKey: 'post_id'
     }
 )
+
+
 
 
 module.exports = {

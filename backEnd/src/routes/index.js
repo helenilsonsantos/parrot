@@ -18,6 +18,7 @@ routes.delete('/post/deletar/:id', postController.deletePost)
 
 //ROTAS PARA O CRUD DE FAZER COMENTARIOS EM POST
 routes.post('/post/coments/criar', ComentsPostController.cadastrarComents)
+routes.get('/post/coments/lista', ComentsPostController.listarComents)
 routes.put('/post/coments/atualizar/:id', ComentsPostController.updateComentsPost)
 routes.delete('/post/coments/deletar/:id', ComentsPostController.deleteComentsPost)
 
