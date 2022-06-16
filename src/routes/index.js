@@ -5,6 +5,7 @@ const ComentsPostController = require('../controllers/ComentsPostController')
 const authController = require('../controllers/authController')
 const auth = require ('../middlewares/auth')
 const userLogado = require ('../middlewares/userLogado')
+const likesController = require('../controllers/likeController')
 const routes = express.Router()
 
 //ROTAS PARA O CRUD DE USUÁRIOS
@@ -24,6 +25,11 @@ routes.post('/post/coments/criar', ComentsPostController.cadastrarComents)
 routes.get('/post/coments/lista', ComentsPostController.listarComents)
 routes.put('/post/coments/atualizar/:id', ComentsPostController.updateComentsPost)
 routes.delete('/post/coments/deletar/:id', ComentsPostController.deleteComentsPost)
+
+//ROTAS DE LIKES
+routes.post('/post/likes/enviar/:idPost', likesController.cadastrarLike)
+routes.get('/post/likes/qtnlikes/:idPost', likesController.qtnLikes)
+routes.delete('/post/likes/remover/:idLike', likesController.removerLike)
 
 //ROTA DE LOGIN DO USUÁRIO
 routes.post('/login', authController.login)
