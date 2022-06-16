@@ -2,6 +2,9 @@ const express = require ('express')
 const userController = require ('../controllers/UserController')
 const postController = require ('../controllers/PostController')
 const ComentsPostController = require('../controllers/ComentsPostController')
+const authController = require('../controllers/authController')
+const auth = require ('../middlewares/auth')
+const userLogado = require ('../middlewares/userLogado')
 const routes = express.Router()
 
 //ROTAS PARA O CRUD DE USUÁRIOS
@@ -21,6 +24,10 @@ routes.post('/post/coments/criar', ComentsPostController.cadastrarComents)
 routes.get('/post/coments/lista', ComentsPostController.listarComents)
 routes.put('/post/coments/atualizar/:id', ComentsPostController.updateComentsPost)
 routes.delete('/post/coments/deletar/:id', ComentsPostController.deleteComentsPost)
+
+//ROTA DE LOGIN DO USUÁRIO
+routes.post('/login', authController.login)
+routes.post('/login/perfil', auth, userLogado.user)
 
 
 module.exports = routes
