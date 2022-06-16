@@ -10,7 +10,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node backEnd/src/app.js",
     "dev": "nodemon backEnd/src/app.js"
-
   },
   "repository": {
     "type": "git",
@@ -31,10 +30,10 @@
     "express-validation": "^4.1.0",
     "jsonwebtoken": "^8.5.1",
     "mysql2": "^2.3.3",
-    "sequelize": "^6.20.1"
+    "sequelize": "^6.20.1",
+    "sequelize-cli": "^6.4.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.16",
-    "sequelize-cli": "^6.4.1"
+    "nodemon": "^2.0.16"
   }
 }
