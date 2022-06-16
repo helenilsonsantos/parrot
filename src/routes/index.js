@@ -15,27 +15,27 @@ const postValidationUpdate = require('../validations/post/update')
 const postValidationDestroy = require('../validations/post/destroy')
 
 //ROTAS PARA O CRUD DE USUÁRIOS
-routes.post('/usuario/criar', userValidationCreate, userController.cadastrarUser)
-routes.get('/usuario/lista', userController.listaUser)
-routes.put('/usuario/atualizar/:id', userValidationUpdate, userController.updateUser)
-routes.delete('/usuario/deletar/:id', userValidationDestroy, userController.deleteUser)
+routes.post('/usuario/criar', auth, userValidationCreate, userController.cadastrarUser)
+routes.get('/usuario/lista', auth, userController.listaUser)
+routes.put('/usuario/atualizar/:id', auth, userValidationUpdate, userController.updateUser)
+routes.delete('/usuario/deletar/:id', auth, userValidationDestroy, userController.deleteUser)
 
 //ROTAS PARA O CRUD DE POST
-routes.post('/post/criar', postValidationCreate, postController.cadastrarPost)
-routes.get('/post/lista', postController.listaPost)
-routes.put('/post/atualizar/:id', postValidationUpdate, postController.updatePost)
-routes.delete('/post/deletar/:id', postValidationDestroy, postController.deletePost)
+routes.post('/post/criar', auth, postValidationCreate, postController.cadastrarPost)
+routes.get('/post/lista', auth, postController.listaPost)
+routes.put('/post/atualizar/:id', auth, postValidationUpdate, postController.updatePost)
+routes.delete('/post/deletar/:id', auth, postValidationDestroy, postController.deletePost)
 
 //ROTAS PARA O CRUD DE FAZER COMENTARIOS EM POST
-routes.post('/post/coments/criar', ComentsPostController.cadastrarComents)
-routes.get('/post/coments/lista', ComentsPostController.listarComents)
-routes.put('/post/coments/atualizar/:id', ComentsPostController.updateComentsPost)
-routes.delete('/post/coments/deletar/:id', ComentsPostController.deleteComentsPost)
+routes.post('/post/coments/criar', auth, ComentsPostController.cadastrarComents)
+routes.get('/post/coments/lista', auth, ComentsPostController.listarComents)
+routes.put('/post/coments/atualizar/:id', auth, ComentsPostController.updateComentsPost)
+routes.delete('/post/coments/deletar/:id', auth, ComentsPostController.deleteComentsPost)
 
 //ROTAS DE LIKES
-routes.post('/post/likes/enviar/:id', likesController.cadastrarLike)
-routes.get('/post/likes/qtnlikes/:id', likesController.qtnLikes)
-routes.delete('/post/likes/remover/:id', likesController.removerLike)
+routes.post('/post/likes/enviar/:id', auth, likesController.cadastrarLike)
+routes.get('/post/likes/qtnlikes/:id', auth, likesController.qtnLikes)
+routes.delete('/post/likes/remover/:id', auth, likesController.removerLike)
 
 //ROTA DE LOGIN DO USUÁRIO
 routes.post('/login', authController.login)
