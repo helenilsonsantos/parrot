@@ -1,18 +1,15 @@
-import { baseUrl, baseUrlHeroku } from './config';
-import { Post } from '../@types';
+import { baseUrl as api, baseUrlHeroku } from './config';
+import { Post, User } from '../@types';
 
 export const renderPosts = (): Promise<Post[]> => {
-    return baseUrl.get<Post[]>("/posts").then(response => response.data);
+    return api.get<Post[]>("/posts").then(response => response.data);
 }
 
-export interface User {
-    idUser: number,
-    nome: string,
-    email: string,
-    apartament: string,
-    admin: boolean
-}
-
-export const renderUsers = (): Promise<User[]> => {
-    return baseUrlHeroku.get<User[]>("/usuario/lista").then(response => response.data);
+export const addMessage = async (post: Omit<Post, "id">) => {
+    try{
+        const response = await api.post("/posts", post)
+        return response.data;
+    } catch(error: any) {
+        alert(`Error: ${error.response.data}`)
+    }
 }

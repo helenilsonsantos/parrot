@@ -1,6 +1,11 @@
 import React from 'react';
 import { ErrorMessage, Formik } from 'formik';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from "react-router-dom";
+import { baseUrl } from '../../services/config';
+import { signInUser } from '../../services/User';
 import * as Yup from 'yup';
+import { logIn } from '../../store/users';
 
 import * as LG from './style';
 import logo from '../../assets/logo-parrot.png';
@@ -8,25 +13,30 @@ import logo from '../../assets/logo-parrot.png';
 
 const FormLogin: React.FC = () => {
     
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
     const schema = Yup.object({
         email: Yup.string().email('E-mail não é válido').required('Campo E-mail é obrigatório'),
-        senha: Yup.string().required('Campo Senha é obrigatório').min(6, 'Senha deve ter pelo menos 6 caracteres.')
+        password: Yup.string().required('Campo Senha é obrigatório').min(6, 'Senha deve ter pelo menos 6 caracteres.')
     })    
     return (
-        <Formik
 
+        //   onSubmit: async values => {
+
+        //   }
+        <Formik
             validationSchema={schema}
             initialValues={{
-                nome: '',
                 email: '',
-                senha: '',
-                confirmaSenha: '',
-                apartment: '',
-                foto: '',
-                admin: false
+                password: ''
             }}
-            onSubmit={values => {
-                alert(JSON.stringify(values, null, 2));
+            onSubmit={async values => {
+                const {accessToken, user} = await signInUser(values);
+                dispatch(logIn({accessToken, permission: user.permission, user}));
+                //@ts-ignore
+                baseUrl.defaults.headers["Authorization"] = `Bearer ${accessToken}`
+                navigate("/feed")
             }}
         >
             {({ handleSubmit, handleChange, values, touched, errors }) => (
@@ -49,16 +59,16 @@ const FormLogin: React.FC = () => {
                     </LG.LoginFormGroup>
                     <LG.LoginFormGroup>
                         <LG.LoginFormInput
-                            name='senha'
+                            name='password'
                             id='senha'
                             type='password'
                             placeholder='senha'
-                            value={values.senha}
+                            value={values.password}
                             onChange={handleChange}
-                            isValid={touched.senha && !errors.senha}
-                            isInvalid={touched.senha && !!errors.senha}
+                            isValid={touched.password && !errors.password}
+                            isInvalid={touched.password && !!errors.password}
                         />
-                        <ErrorMessage name='senha' component={LG.StyledErrorMessage}/>
+                        <ErrorMessage name='password' component={LG.StyledErrorMessage}/>
                     </LG.LoginFormGroup>
                     <LG.StyledButton size='sm' type='submit'>entrar</LG.StyledButton>
                 <LG.SignUpLink>

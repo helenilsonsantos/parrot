@@ -1,30 +1,27 @@
 import React from 'react';
 import * as PostFeed from './style';
 import avatar from '../../assets/avatar.png';
-import { User } from '../../services/Posts';
+import { Post } from '../../@types';
 
-interface UserFeedProps {
-    users: User[];
+interface PostFeedProps {
+    posts: Post[];
 }
 
 
-const CardPostFeed: React.FC<UserFeedProps> =  ({ users }) => {
+const CardPostFeed: React.FC<PostFeedProps> =  ({ posts }) => {
     return (
-            <PostFeed.CardContainer>
-                {users.map(user => (
-                <div key={user.idUser}>
-                <img src={avatar} />
-                <PostFeed.CardText>
-                    <span className='username'>{user.nome}</span>
-                    <span className='username'>{user.email}</span>
-                    <span className='username'>{user.apartament}</span>
-                    <span className='timestamp'>10/10/2022 16:00</span>
-                    {/* <p>{post.comentario}</p> */}
-                </PostFeed.CardText>
-                </div>
-                ))}
+            <>
+            {posts.map(post => (
+            <PostFeed.CardContainer key={post.id}>
+                    <img src={avatar} />
+                        <PostFeed.CardText>
+                            <span className='username'>{post.nome} - apê {post.apartment}</span>
+                            <span className='timestamp'>10/10/2022 16:00</span>
+                            <p>{post.comentario}</p>
+                        </PostFeed.CardText>
             </PostFeed.CardContainer>
-            
+            ))}
+            </>
     )
 }
 

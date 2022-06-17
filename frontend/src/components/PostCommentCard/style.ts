@@ -39,6 +39,10 @@ export const TextArea = styled(Form.Control)`
     border-radius: 10px;
     resize: none;
     margin-top: 1rem;
+
+    &:focus {
+        border-color: #6033AA; 
+    }
 `
 
 export const PostButton = styled(Button)`

@@ -1,23 +1,27 @@
 import { useEffect, useState } from "react";
-import { renderPosts } from "../services/Posts";
+import { addMessage, renderPosts } from "../services/Posts";
 import { Post } from "../@types";
 
-const usePost = () => {
+const usePosts = () => {
     const [postList, setPostList] = useState<Post[]>([] as Post[]);
 
     useEffect(() => {
         renderPosts().then(posts => setPostList(posts));
     }, [setPostList])
 
-    // const [postListById, setPostListByID] = useState<Post[]>([] as Post[]);
+    const handleAddPost = async (post: Omit<Post, 'id'>) => {
+        const newPost = await addMessage(post)
+        setPostList(
+            oldPostList => [...oldPostList, newPost]
+        )
+    }
 
-    // useEffect(() => {
-    //     renderPostsById().then(posts => setPostListByID(posts))
-    // })
 
 
-
-    return postList
+    return {
+        postList,
+        handleAddPost
+    }
 }
 
-export default usePost;
+export default usePosts;

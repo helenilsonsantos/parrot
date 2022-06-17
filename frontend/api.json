@@ -1,39 +1,38 @@
 {
   "users": [
     {
-      "idUser": 1,
-      "nome": "Teste",
+      "email": "ana@ana.coom.br",
+      "password": "$2a$10$xlXDIvTZ7.pmsjMaV5p2aOXfj30h40XZYu069o9SsSLijNF16pfGW",
+      "nome": "ana",
+      "apartamento": "126",
+      "admin": false,
+      "id": 2
+    },
+    {
       "email": "email@email.com",
-      "apartment": "130",
-      "admin": false
-    },
-    {
-      "nome": "User Test",
-      "email": "test@mail.com",
-      "apartment": "144",
-      "admin": "",
-      "idUser": 2
-    },
-    {
+      "password": "$2a$10$PBljx6Ui7YHCqy08WmHRNujMAeDMnbCGfiWbw4t.vl61fhpqOTVEC",
       "nome": "Usuario Teste",
-      "email": "email@email.com",
       "apartament": "1020",
       "admin": false,
-      "idUser": 3
+      "id": 3
     },
     {
-      "nome": "Usuario teste",
-      "email": "email@email.com",
-      "apartament": "1020",
+      "email": "maria@email.com",
+      "password": "$2a$10$i93MU9FA.IkY3odeJhkbX.ktSsXoxh7QbZl2FZ0z11uTz7pADvzV.",
+      "nome": "Maria",
+      "apartament": "150",
       "admin": false,
-      "idUser": 4
+      "id": 4
     },
     {
-      "nome": "Usuario Teste",
-      "email": "email@email.com",
-      "apartament": "1020",
-      "admin": false,
-      "idUser": 5
+      "email": "joao@joao.com",
+      "password": "$2a$10$5aRoI/KSAlSAcUZqnOXPie.ilipZ37z2ceYZ9GgjUOSwhk7Ofp9Xy",
+      "nome": "Joao",
+      "confirmaSenha": "1234567",
+      "apartment": "71",
+      "foto": "foto.png",
+      "permission": 1,
+      "id": 5
     }
   ],
   "posts": [
@@ -52,6 +51,34 @@
       "comentario": "Contratei um personal trainer e quero um parceiro pra fazer treinos semanais e dividir o custo, quem anima? :D",
       "foto": "...",
       "id": 2
+    },
+    {
+      "id": 3,
+      "nome": "Usuario Teste",
+      "email": "email@email.com",
+      "comentario": "Mensagem"
+    },
+    {
+      "id": 4,
+      "comentario": "Ola"
+    },
+    {
+      "id": 5,
+      "nome": "Usuario Teste",
+      "email": "email@email.com",
+      "comentario": "Funciona po!"
+    },
+    {
+      "id": 6,
+      "nome": "Usuario Teste",
+      "email": "email@email.com",
+      "comentario": "Ola meu povo"
+    },
+    {
+      "id": 7,
+      "nome": "Usuario Teste",
+      "email": "email@email.com",
+      "comentario": "Teste"
     }
   ]
 }

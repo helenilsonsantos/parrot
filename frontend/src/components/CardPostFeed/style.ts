@@ -23,6 +23,7 @@ export const CardContainer = styled.div`
 `
 
 export const CardText = styled.div`
+    flex: 1;
     display: flex;
     flex-flow: wrap column;
     max-width: 500px;

@@ -2,17 +2,19 @@ import React from 'react';
 import ParrotNavbar from '../../components/NavBar';
 import CardPostFeed from '../../components/CardPostFeed';
 import PostCommentCard from '../../components/PostCommentCard';
-import usePost from '../../hooks/posts';
-import useUser from '../../hooks/users';
+import usePosts from '../../hooks/posts';
 
 const Feed: React.FC = () => {
-    const userList = useUser();
+    const {
+        postList,
+        handleAddPost
+    } = usePosts();
 
     return (
         <>
             <ParrotNavbar />
-            <PostCommentCard />
-            <CardPostFeed users={userList} />
+            <PostCommentCard postMessage={handleAddPost}/>
+            <CardPostFeed posts={postList} />
         </>
     )
 }

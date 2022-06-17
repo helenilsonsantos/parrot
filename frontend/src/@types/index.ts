@@ -9,11 +9,11 @@
 // }
 
 export interface Post {
+    id: number,
     nome: string,
     email: string,
-    apartament: string,
-    comentario: string,
-    foto: string
+    apartment: string,
+    comentario: string
 }
 
 export interface SignIn {
@@ -22,31 +22,29 @@ export interface SignIn {
 }
 
 export interface User extends SignIn {
-    idUser: number,
+    id: number,
     nome: string,
-    senha: string,
-    apresentacao: string,
-    // admin: boolean
-    // permission: Permission
+    apartment: string,
+    permission: Permission
 }
 
-// export enum Permission {
-//     "Nothing",
-//     "User",
-//     "Admin"
-// }
+export enum Permission {
+    "Nothing",
+    "User",
+    "Admin"
+}
 
-// export interface UserState {
-//     isLogged: boolean,
-//     accessToken: string,
-//     permission: Permission,
-//     id?: number,
-//     nome?: string,
-//     email?: string,
-//     apartamento?: number
-//     imagem?: string
-// }
+export interface UserState {
+    isLogged: boolean,
+    accessToken: string,
+    permission: Permission,
+    id?: number,
+    nome?: string,
+    email?: string,
+    apartamento?: number
+    imagem?: string
+}
 
-// export interface PostState {
-//     post: Post []
-// }
+export interface PostState {
+    post: Post []
+}
