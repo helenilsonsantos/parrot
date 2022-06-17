@@ -3,7 +3,7 @@ import { Navbar, Container } from 'react-bootstrap';
 import * as PNav from './style';
 
 import navbarLogo from '../../assets/navbar-logo.png';
-import navbarLogoMobile from '../../assets/logo-mobile.png';
+import navbarLogoMobile from '../../assets/parrot-image.png';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootStore } from '../../store';
 import { logOut } from "../../store/users";

@@ -51,34 +51,6 @@
       "comentario": "Contratei um personal trainer e quero um parceiro pra fazer treinos semanais e dividir o custo, quem anima? :D",
       "foto": "...",
       "id": 2
-    },
-    {
-      "id": 3,
-      "nome": "Usuario Teste",
-      "email": "email@email.com",
-      "comentario": "Mensagem"
-    },
-    {
-      "id": 4,
-      "comentario": "Ola"
-    },
-    {
-      "id": 5,
-      "nome": "Usuario Teste",
-      "email": "email@email.com",
-      "comentario": "Funciona po!"
-    },
-    {
-      "id": 6,
-      "nome": "Usuario Teste",
-      "email": "email@email.com",
-      "comentario": "Ola meu povo"
-    },
-    {
-      "id": 7,
-      "nome": "Usuario Teste",
-      "email": "email@email.com",
-      "comentario": "Teste"
     }
   ]
 }

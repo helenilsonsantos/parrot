@@ -3,6 +3,7 @@ import Feed from "../pages/Feed";
 import LoginPage from "../pages/LoginPage";
 import SignUpPage from "../pages/SignUpPage";
 import UserProfile from "../pages/UserProfile";
+import RequireAuth from "./RequiredAuth";
 
 
 function Routes(): JSX.Element {
@@ -11,8 +12,14 @@ function Routes(): JSX.Element {
       <Wrapper>
         <Route path="/" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />
-        <Route path='/userprofile' element={<UserProfile />} />
-        <Route path='/feed' element={<Feed />} />
+        <Route path='/feed' 
+        element={
+          <RequireAuth>
+            <Feed />
+          </RequireAuth>
+        } />
+        <Route path='/userprofile'
+          element={<UserProfile />} />
       </Wrapper>
     </BrowserRouter>
   );

@@ -1,15 +1,6 @@
-// export interface Post {
-//     id: number,
-//     user_nome: string,
-//     user_email: string,
-//     user_apartamento: number,
-//     comentario: string,
-//     user_imagem: string
-//     user_id: number
-// }
-
 export interface Post {
     id: number,
+    user_id: number
     nome: string,
     email: string,
     apartment: string,
