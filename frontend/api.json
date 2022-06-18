@@ -1,0 +1,56 @@
+{
+  "users": [
+    {
+      "email": "ana@ana.coom.br",
+      "password": "$2a$10$xlXDIvTZ7.pmsjMaV5p2aOXfj30h40XZYu069o9SsSLijNF16pfGW",
+      "nome": "ana",
+      "apartamento": "126",
+      "admin": false,
+      "id": 2
+    },
+    {
+      "email": "email@email.com",
+      "password": "$2a$10$PBljx6Ui7YHCqy08WmHRNujMAeDMnbCGfiWbw4t.vl61fhpqOTVEC",
+      "nome": "Usuario Teste",
+      "apartament": "1020",
+      "admin": false,
+      "id": 3
+    },
+    {
+      "email": "maria@email.com",
+      "password": "$2a$10$i93MU9FA.IkY3odeJhkbX.ktSsXoxh7QbZl2FZ0z11uTz7pADvzV.",
+      "nome": "Maria",
+      "apartament": "150",
+      "admin": false,
+      "id": 4
+    },
+    {
+      "email": "joao@joao.com",
+      "password": "$2a$10$5aRoI/KSAlSAcUZqnOXPie.ilipZ37z2ceYZ9GgjUOSwhk7Ofp9Xy",
+      "nome": "Joao",
+      "confirmaSenha": "1234567",
+      "apartment": "71",
+      "foto": "foto.png",
+      "permission": 1,
+      "id": 5
+    }
+  ],
+  "posts": [
+    {
+      "nome": "User Test",
+      "email": "test@email.com",
+      "apartment": 102,
+      "comentario": "Poxa galera, vamos respeitar o horário de silêncio! Tinha alguém usando furadeira 2 HORAS DA MANHÃ!!! ó_ó",
+      "foto": "...",
+      "id": 1
+    },
+    {
+      "nome": "User Test 2",
+      "email": "test2@email.com",
+      "apartment": 105,
+      "comentario": "Contratei um personal trainer e quero um parceiro pra fazer treinos semanais e dividir o custo, quem anima? :D",
+      "foto": "...",
+      "id": 2
+    }
+  ]
+}
