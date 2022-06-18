@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'parrott'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2B2B5A7C9DE84DB5AE57016341AEFE4A }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8B9CA4633E5D4E398232712ABF378660 }}
           package: .
